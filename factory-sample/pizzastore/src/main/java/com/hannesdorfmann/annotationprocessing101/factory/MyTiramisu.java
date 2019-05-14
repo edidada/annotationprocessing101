@@ -18,16 +18,13 @@ package com.hannesdorfmann.annotationprocessing101.factory;
 
 import com.hannesdorfmann.annotationprocessing101.factory.annotation.Factory;
 
-/**
- * @author Hannes Dorfmann
- */
 @Factory(
-        id = "Calzone",
-        type = Meal.class
+    id = "MyTiramisu",
+    type = Meal.class
 )
-public class CalzonePizza implements Meal {
+public class MyTiramisu implements Meal {
 
   @Override public float getPrice() {
-    return 8.5f;
+    return 4.51f;
   }
 }

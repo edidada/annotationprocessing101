@@ -26,11 +26,15 @@ import java.io.InputStreamReader;
 public class PizzaStore {
 
   private MealFactory factory = new MealFactory();
+//  private AniFactory mAniFactory = new AniFactory();
 
   public Meal order(String mealName) {
     return factory.create(mealName);
   }
 
+//  public Ani orderAni(String aniName) {
+//    return mAniFactory.create(aniName);
+//  }
   private static String readConsole() throws IOException {
     System.out.println("What do you like?");
     BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
@@ -42,5 +46,7 @@ public class PizzaStore {
     PizzaStore pizzaStore = new PizzaStore();
     Meal meal = pizzaStore.order(readConsole());
     System.out.println("Bill: $" + meal.getPrice());
+//    Ani ani = pizzaStore.orderAni("MyTiramisu");
+//    System.out.println("AniFactory: $" + ani.getAniAnount());
   }
 }

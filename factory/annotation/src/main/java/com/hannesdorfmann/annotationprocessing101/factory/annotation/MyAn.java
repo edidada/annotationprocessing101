@@ -14,20 +14,27 @@
  * limitations under the License.
  */
 
-package com.hannesdorfmann.annotationprocessing101.factory;
+package com.hannesdorfmann.annotationprocessing101.factory.annotation;
 
-import com.hannesdorfmann.annotationprocessing101.factory.annotation.Factory;
+import java.lang.annotation.*;
 
 /**
+ * Annotation to indicate classes that are part of a certain factory
+ *
  * @author Hannes Dorfmann
  */
-@Factory(
-        id = "Calzone",
-        type = Meal.class
-)
-public class CalzonePizza implements Meal {
 
-  @Override public float getPrice() {
-    return 8.5f;
-  }
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.CLASS)
+public @interface MyAn {
+
+  /**
+   * The name of the factory
+   */
+  Class type();
+
+  /**
+   * The identifier for determining which item should be instantiated
+   */
+  String id();
 }

@@ -14,7 +14,6 @@
     <module>processor</module>
   </modules>
 
-
   <build>
     <pluginManagement>
       <plugins>

@@ -18,6 +18,8 @@ package com.hannesdorfmann.annotationprocessing101.factory.processor;
 
 import com.google.auto.service.AutoService;
 import com.hannesdorfmann.annotationprocessing101.factory.annotation.Factory;
+import com.hannesdorfmann.annotationprocessing101.factory.annotation.MyAn;
+
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -66,7 +68,7 @@ public class FactoryProcessor extends AbstractProcessor {
 
   @Override public Set<String> getSupportedAnnotationTypes() {
     Set<String> annotations = new LinkedHashSet<String>();
-    annotations.add(Factory.class.getCanonicalName());
+    annotations.add(MyAn.class.getCanonicalName());
     return annotations;
   }
 
@@ -150,6 +152,7 @@ public class FactoryProcessor extends AbstractProcessor {
   @Override
   public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
 
+    System.out.println("this:"+roundEnv.getClass().getSimpleName());//
     try {
 
       // Scan classes
@@ -173,9 +176,10 @@ public class FactoryProcessor extends AbstractProcessor {
             factoryClasses.get(annotatedClass.getQualifiedFactoryGroupName());
         if (factoryClass == null) {
           String qualifiedGroupName = annotatedClass.getQualifiedFactoryGroupName();
+          System.out.println(qualifiedGroupName);//com.hannesdorfmann.annotationprocessing101.factory.Meal com.hannesdorfmann.annotationprocessing101.factory.Ani
           factoryClass = new FactoryGroupedClasses(qualifiedGroupName);
           factoryClasses.put(qualifiedGroupName, factoryClass);
-        }
+      }
 
         // Checks if id is conflicting with another @Factory annotated class with the same id
         factoryClass.add(annotatedClass);

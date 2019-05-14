@@ -56,6 +56,6 @@ public class PizzaStore_HandWritten {
   public static void main(String[] args) throws IOException {
     PizzaStore_HandWritten pizzaStore = new PizzaStore_HandWritten();
     Meal meal = pizzaStore.order(readConsole());
-    System.out.println("Bill: $" + meal.getPrice());
+    System.out.println("Billssssss: $" + meal.getPrice());
   }
 }

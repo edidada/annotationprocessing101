@@ -8,3 +8,10 @@ mvn -q  package exec:java
 
 ...\factory-sample\pizzastore\target\generated-sources\annotations\com\hannesdorfmann\annotationprocessing101\factory\MealFactory.java
 
+Tiramisu.java
+Margherita.java
+Calzone.java
+
+Factory注解，怎么用的，注解处理器怎么实现的，处理了什么，产生了哪些文件
+
+
