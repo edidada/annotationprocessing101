@@ -46,7 +46,8 @@ import javax.tools.Diagnostic;
  *
  * @author Hannes Dorfmann
  */
-@AutoService(Processor.class) public class FactoryProcessor extends AbstractProcessor {
+@AutoService(Processor.class)
+public class FactoryProcessor extends AbstractProcessor {
 
   private Types typeUtils;
   private Elements elementUtils;
